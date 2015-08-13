@@ -26,7 +26,7 @@ var config          = require('config'),
 logger.info('*************************************');
 logger.info('Start application...');
 logger.info('*************************************');
-// TODO: move from schemaMappings to dataMapping to be able to have smaller config files and load only the appropriate ones
+
 // Assert all the required params are provided
 try {
     assert.equal(typeof argv.t, "string", "-t (type of system) needs to be defined as string");
