@@ -1,0 +1,94 @@
+# OneSolution version 15.0 mapping file
+
+
+# pe: Person Entity
+PE:
+  - indexDefinition:
+      index: pe
+      type: name
+    doc:
+      params:
+        query: SELECT * FROM pe_name_mstr
+        id: pe_name_mstr.pe_id
+        orderBy: pe_name_mstr.unique_id
+        chunkSize: 100
+      PE ID: pe_name_mstr.pe_id
+      Status: pe_name_mstr.pe_id_status
+      Full Name: pe_name_mstr.name
+      First Name: pe_name_mstr.name_first
+      Middle Name: pe_name_mstr.name_middle
+      Last Name: pe_name_mstr.name_last
+      url: pe_name_mstr.pe_url
+      Security Code: pe_name_mstr.security_cd
+      Select Code 1: pe_name_mstr.pe_sel_cd1
+      Select Code 2: pe_name_mstr.pe_sel_cd2
+      Affiliation Code: pe_name_mstr.affil_cd
+      updateWhen: pe_name_mstr.update_when
+      uniqueKey: pe_name_mstr.unique_key
+    subDocs:
+      - params:
+          query: SELECT * FROM pe_email_dtl INNER JOIN pe_name_mstr ON pe_email_dtl.pe_id = pe_name_mstr.pe_id
+          PE ID: pe_email_dtl.pe_id
+          nodeName: Email
+          orderBy: pe_email_dtl.unique_id
+          chunkSize: 100
+        Email Type: pe_email_dtl.email_type_cd
+        Email Address Code: pe_email_dtl.pe_addr_cd
+        Email: pe_email_dtl.email_addr
+        updateWhen: pe_email_dtl.update_when
+        uniqueKey: pe_email_dtl.unique_key
+      - params:
+          query: SELECT * FROM pe_address_dtl INNER JOIN pe_name_mstr ON pe_address_dtl.pe_id = pe_name_mstr.pe_id
+          PE ID: pe_address_dtl.pe_id
+          nodeName: Address
+          orderBy: pe_address_dtl.unique_id
+          chunkSize: 100
+        Address Code: pe_address_dtl.pe_addr_cd
+        Street: pe_address_dtl.st1
+        City: pe_address_dtl.city
+        State: pe_address_dtl.state
+        Zip: pe_address_dtl.zip
+        updateWhen: pe_address_dtl.update_when
+        uniqueKey: pe_address_dtl.unique_key
+  - indexDefinition:
+      index: pe
+      type: product
+    doc:
+      params:
+        query: SELECT * FROM pe_prod_mstr
+        id: pe_prod_mstr.pr_id
+        chunkSize: 100
+        orderBy: pe_prod_mstr.unique_id
+      Product ID: pe_prod_mstr.pr_id
+      PE ID: pe_prod_mstr.pe_id
+      Product Status: pe_prod_mstr.prod_status
+      Product Title: pe_prod_mstr.prod_title
+      Product Description: pe_prod_mstr.prod_desc
+      updateWhen: pe_name_mstr.update_when
+      uniqueKey: pe_name_mstr.unique_key
+
+# hr: Human Resources
+HR:
+  - indexDefinition:
+      index: hr
+      type: employee
+    doc:
+      params:
+        query: SELECT * FROM hr_empmstr
+        id: hr_empmstr.id
+        orderBy: hr_empmstr.unique_id
+      Emp ID: hr_empmstr.id
+      HR Status: hr_empmstr.status
+      PY Status: hr_empmstr.py_stat
+      Full Name: hr_empmstr.name
+      First Name: hr_empmstr.fname
+      Middle Name: hr_empmstr.mname
+      Last Name: hr_empmstr.lname
+      Type: hr_empmstr.type
+      Bargaining Unit: hr_empmstr.barg_unit
+      Division: hr_empmstr.division
+      Department: hr_empmstr.dept
+      Birth Date: hr_empmstr.dob
+      Hire Date: hr_empmstr.hdt
+      updateWhen: hr_empmstr.update_when
+      uniqueKey: hr_empmstr.unique_key

@@ -1,0 +1,12 @@
+# OneSolution version 15.1.10 mapping file
+
+# pe: Person Entity
+PE:
+  - doc:
+      affiliationCode: DEPRECATED
+      extraFieldMinor2: DEPRECATED
+
+# hr: Human Resources
+HR:
+  - doc:
+      extraFieldPoint: hr_empmstr.extra_field4

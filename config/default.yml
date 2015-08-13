@@ -1,0 +1,53 @@
+# Default configuration
+
+# Logging
+log:
+  logLevel: info
+  logPath: /var/log/dataShopper
+  includeSource: false
+
+# Database configurations
+database:
+  source:
+    server: '10.1.10.79'
+    database: 'devmain2014a'
+    user: 'ray.kaminski'
+    password: 'kam1kam..'
+  target:
+    server: 'localhost:9200'
+    apiVersion: '1.6'
+    sniffOnStart: true
+    log:
+      type: 'stdio'
+      levels:
+        - 'error'
+        - 'warning'
+    chunkSize: 200
+
+# Enumuration of Source Systems
+sourceSystem:
+  - OS
+  - BP
+
+# Enumuration of supported versions
+version:
+  OS:
+    - '15.0.1'
+    - '15.1.10'
+    - '15.1.14'
+  BP:
+    - '7.9.7'
+    - '7.9.8'
+    - '7.9.9'
+
+# Enumeration of IFAS SubSystems
+subSystem:
+  - AP
+  - AR
+  - FA
+  - GL
+  - HR
+  - PE
+  - PO
+  - PY
+  - SI
