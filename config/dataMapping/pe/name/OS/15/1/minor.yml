@@ -1,0 +1,8 @@
+doc:
+  url: DEPRECATED
+  extraFieldMinor2: pe_name_mstr.extra_field2
+  extraFieldMinor3: pe_name_mstr.extra_field3
+subDocs:
+  - SKIP
+  - params:
+      url: pe_email_dtl.url

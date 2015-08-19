@@ -51,15 +51,8 @@ async.series([
         // Check if valid version for the source system is provided. If not, exit
         if (_.indexOf(config.version[argv.t], argv.v) >= 0) {
             version = argv.v;
-            logger.info('Source Version: ' + version + '. Loading mapping file(s).');
-
-            var cb = function(err, result) {
-                global.schemaMap = result;
-                callback(err, result);
-            };
-
-            //generate the schema mapping file
-            mapping.loadSchemaMappings(sourceSystem, version, cb);
+            logger.info('Source Version: ' + version);
+            callback(null);
         } else {
             callback('Version not supported. Exit.');
         }
@@ -75,7 +68,16 @@ async.series([
             ss.forEach(function (s) {
                 if (_.indexOf(config.subSystem, s) >= 0) {
                     subSystem.push(s);
-                    logger.info('Subsystem ' + s + ' found');
+                    logger.info('Subsystem ' + s + ' found. Generate configuration...');
+                    mapping.createIndexMapping(sourceSystem, version, s, function(err, result) {
+                        if (err) {
+                            logger.error(err);
+                        } else {
+                            logger.info(result, 'Configuration for ' + s);
+                            if (!global.schemaMap) global.schemaMap = [];
+                            global.schemaMap[s] = result;
+                        }
+                    });
                 } else {
                     logger.info('Subsystem ' + s + ' not found. Skipping');
                 }

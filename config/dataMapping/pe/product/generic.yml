@@ -1,0 +1,15 @@
+index: pe
+type: product
+doc:
+  params:
+    query: SELECT * FROM pe_prod_mstr
+    id: pe_prod_mstr.pr_id
+    chunkSize: 100
+    orderBy: pe_prod_mstr.unique_id
+  Product ID: pe_prod_mstr.pr_id
+  PE ID: pe_prod_mstr.pe_id
+  Product Status: pe_prod_mstr.prod_status
+  Product Title: pe_prod_mstr.prod_title
+  Product Description: pe_prod_mstr.prod_desc
+  updateWhen: pe_name_mstr.update_when
+  uniqueKey: pe_name_mstr.unique_key

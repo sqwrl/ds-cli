@@ -1,0 +1,22 @@
+index: hr
+type: employee
+doc:
+  params:
+    query: SELECT * FROM hr_empmstr
+    id: hr_empmstr.id
+    orderBy: hr_empmstr.unique_id
+  Emp ID: hr_empmstr.id
+  HR Status: hr_empmstr.status
+  PY Status: hr_empmstr.py_stat
+  Full Name: hr_empmstr.name
+  First Name: hr_empmstr.fname
+  Middle Name: hr_empmstr.mname
+  Last Name: hr_empmstr.lname
+  Type: hr_empmstr.type
+  Bargaining Unit: hr_empmstr.barg_unit
+  Division: hr_empmstr.division
+  Department: hr_empmstr.dept
+  Birth Date: hr_empmstr.dob
+  Hire Date: hr_empmstr.hdt
+  updateWhen: hr_empmstr.update_when
+  uniqueKey: hr_empmstr.unique_key
