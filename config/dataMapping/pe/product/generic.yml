@@ -6,10 +6,38 @@ doc:
     id: pe_prod_mstr.pr_id
     chunkSize: 100
     orderBy: pe_prod_mstr.unique_id
-  Product ID: pe_prod_mstr.pr_id
-  PE ID: pe_prod_mstr.pe_id
-  Product Status: pe_prod_mstr.prod_status
-  Product Title: pe_prod_mstr.prod_title
-  Product Description: pe_prod_mstr.prod_desc
-  updateWhen: pe_name_mstr.update_when
-  uniqueKey: pe_name_mstr.unique_key
+  ProductID:
+    field: pe_prod_mstr.pr_id
+    type: string
+    text: Product ID
+    facet: false
+  PeId:
+    field: pe_prod_mstr.pe_id
+    type: string
+    text: PE ID
+    facet: false
+  ProductStatus:
+    field: pe_prod_mstr.prod_status
+    type: string
+    text: Product Status
+    facet: true
+  ProductTitle:
+    field: pe_prod_mstr.prod_title
+    type: string
+    text: Product Title
+    facet: false
+  ProductDescription:
+    field: pe_prod_mstr.prod_desc
+    type: string
+    text: Product Description
+    facet: false
+  UpdateWhen:
+    field: pe_name_mstr.update_when
+    type: date
+    text: Update When
+    facet: true
+  UniqueKey:
+    field: pe_name_mstr.unique_key
+    type: string
+    text: Update Key
+    facet: false

@@ -1,2 +1,6 @@
 doc:
-  extraMajorField1: pe_name_mstr.extra_field1
+  extraMajorField1:
+    field: pe_name_mstr.extra_field1
+    type: integer
+    text: Extra Major
+    facet: true

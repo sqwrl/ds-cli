@@ -1,2 +1,6 @@
 doc:
-  extraFieldPoint: hr_empmstr.extra_field4
+  extraFieldPoint:
+    field: hr_empmstr.extra_field4
+    type: integer
+    text: Extra Field 4
+    facet: false

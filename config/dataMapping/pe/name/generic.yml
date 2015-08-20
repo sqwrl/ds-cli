@@ -6,41 +6,93 @@ doc:
     id: pe_name_mstr.pe_id
     orderBy: pe_name_mstr.unique_id
     chunkSize: 100
-  PE ID: pe_name_mstr.pe_id
-  Status: pe_name_mstr.pe_id_status
-  Full Name: pe_name_mstr.name
-  First Name: pe_name_mstr.name_first
-  Middle Name: pe_name_mstr.name_middle
-  Last Name: pe_name_mstr.name_last
-  url: pe_name_mstr.pe_url
-  Security Code: pe_name_mstr.security_cd
-  Select Code 1: pe_name_mstr.pe_sel_cd1
-  Select Code 2: pe_name_mstr.pe_sel_cd2
-  Affiliation Code: pe_name_mstr.affil_cd
-  updateWhen: pe_name_mstr.update_when
-  uniqueKey: pe_name_mstr.unique_key
-subDocs:
-  - params:
-      query: SELECT * FROM pe_email_dtl INNER JOIN pe_name_mstr ON pe_email_dtl.pe_id = pe_name_mstr.pe_id
-      PE ID: pe_email_dtl.pe_id
-      nodeName: Email
-      orderBy: pe_email_dtl.unique_id
-      chunkSize: 100
-    Email Type: pe_email_dtl.email_type_cd
-    Email Address Code: pe_email_dtl.pe_addr_cd
-    Email: pe_email_dtl.email_addr
-    updateWhen: pe_email_dtl.update_when
-    uniqueKey: pe_email_dtl.unique_key
-  - params:
-      query: SELECT * FROM pe_address_dtl INNER JOIN pe_name_mstr ON pe_address_dtl.pe_id = pe_name_mstr.pe_id
-      PE ID: pe_address_dtl.pe_id
-      nodeName: Address
-      orderBy: pe_address_dtl.unique_id
-      chunkSize: 100
-    Address Code: pe_address_dtl.pe_addr_cd
-    Street: pe_address_dtl.st1
-    City: pe_address_dtl.city
-    State: pe_address_dtl.state
-    Zip: pe_address_dtl.zip
-    updateWhen: pe_address_dtl.update_when
-    uniqueKey: pe_address_dtl.unique_key
+  PeId:
+    field: pe_name_mstr.pe_id
+    type: string
+    text: PE ID
+    facet: false
+  Status:
+    field: pe_name_mstr.pe_id_status
+    type: string
+    text: Status
+    facet: true
+  FullName:
+    field: pe_name_mstr.name
+    type: string
+    text: Full Name
+    facet: false
+  FirstName:
+    field: pe_name_mstr.name_first
+    type: string
+    text: First Name
+    facet: false
+  MiddleName:
+    field: pe_name_mstr.name_middle
+    type: string
+    text: Middle Name
+    facet: false
+  LastName:
+    field: pe_name_mstr.name_last
+    type: string
+    text: Last Name
+    facet: false
+  Url:
+    field: pe_name_mstr.pe_url
+    type: string
+    text: Url
+    facet: false
+  SecurityCode:
+    field: pe_name_mstr.security_cd
+    type: string
+    text: Security Code
+    facet: true
+  SelCode1:
+    field: pe_name_mstr.pe_sel_cd1
+    type: string
+    text: Select Code 1
+    facet: true
+  SelCode2:
+    field: pe_name_mstr.pe_sel_cd2
+    type: string
+    text: Select Code 2
+    facet: true
+  AffCode:
+    field: pe_name_mstr.affil_cd
+    type: string
+    text: Affiliation Code
+    facet: true
+  UpdateWhen:
+    field: pe_name_mstr.update_when
+    type: date
+    text: Update When
+    facet: true
+  UniqueKey:
+    field: pe_name_mstr.unique_key
+    type: string
+    text: Unique Key
+    facet: false
+#subDocs:
+#  - params:
+#      query: SELECT * FROM pe_email_dtl INNER JOIN pe_name_mstr ON pe_email_dtl.pe_id = pe_name_mstr.pe_id
+#      PE ID: pe_email_dtl.pe_id
+#      nodeName: Email
+#      orderBy: pe_email_dtl.unique_id
+#      chunkSize: 100
+#    Email Type: pe_email_dtl.email_type_cd
+#    Email Address Code: pe_email_dtl.pe_addr_cd
+#    Email: pe_email_dtl.email_addr
+#    updateWhen: pe_email_dtl.update_when
+#    uniqueKey: pe_email_dtl.unique_key
+#  - params:
+#      query: SELECT * FROM pe_address_dtl INNER JOIN pe_name_mstr ON pe_address_dtl.pe_id = pe_name_mstr.pe_id
+#      PE ID: pe_address_dtl.pe_id
+#      nodeName: Address
+#      orderBy: pe_address_dtl.unique_id
+#      chunkSize: 100
+#    Address Code: pe_address_dtl.pe_addr_cd
+#    Street: pe_address_dtl.st1
+#    City: pe_address_dtl.city
+#    State: pe_address_dtl.state
+#    Zip: pe_address_dtl.zip
+#    updateWhen: pe_address_dtl.update_when
+#    uniqueKey: pe_address_dtl.unique_key

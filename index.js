@@ -69,7 +69,7 @@ async.series([
                 if (_.indexOf(config.subSystem, s) >= 0) {
                     subSystem.push(s);
                     logger.info('Subsystem ' + s + ' found. Generate configuration...');
-                    mapping.createIndexMapping(sourceSystem, version, s, function(err, result) {
+                    mapping.createFieldMapping(sourceSystem, version, s, function(err, result) {
                         if (err) {
                             logger.error(err);
                         } else {

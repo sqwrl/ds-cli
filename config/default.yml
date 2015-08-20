@@ -51,3 +51,28 @@ subSystem:
   - PO
   - PY
   - SI
+
+# Elastisearch field mapping defaults
+esMappingDefaults:
+  string:
+    store: false
+    index: analyzed
+    analyzer: standard
+  raw:
+    type: string
+    store: false
+    index: not_analyzed
+  integer:
+    store: false
+    index: analyzed
+  float:
+    store: false
+    index: analyzed
+  date:
+    store: false
+    index: analyzed
+    format: date_optional_time
+  boolean:
+    store: false
+    index: analyzed
+
