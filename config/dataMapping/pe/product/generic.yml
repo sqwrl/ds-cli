@@ -15,7 +15,7 @@ doc:
     field: pe_prod_mstr.pe_id
     type: string
     text: PE ID
-    facet: false
+    facet: true
   ProductStatus:
     field: pe_prod_mstr.prod_status
     type: string
