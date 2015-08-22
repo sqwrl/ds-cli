@@ -1,5 +1,7 @@
 index: pe
+indexText: Person Entity
 type: name
+typeText: Vendor
 doc:
   params:
     query: SELECT * FROM pe_name_mstr

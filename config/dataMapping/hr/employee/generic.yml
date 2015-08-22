@@ -1,5 +1,7 @@
 index: hr
+indexText: Human Resources
 type: employee
+typeText: Employee
 doc:
   params:
     query: SELECT * FROM hr_empmstr

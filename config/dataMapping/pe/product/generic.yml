@@ -1,5 +1,7 @@
 index: pe
+indexTest: Person Entity
 type: product
+typeText: Product
 doc:
   params:
     query: SELECT * FROM pe_prod_mstr
