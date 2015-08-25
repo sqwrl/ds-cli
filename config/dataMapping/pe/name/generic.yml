@@ -2,6 +2,7 @@ index: pe
 indexText: Person Entity
 type: name
 typeText: Vendor
+fixedColumns: 2
 doc:
   params:
     query: SELECT * FROM pe_name_mstr
@@ -13,16 +14,16 @@ doc:
     type: string
     text: PE ID
     facet: false
-  Status:
-    field: pe_name_mstr.pe_id_status
-    type: string
-    text: Status
-    facet: true
   FullName:
     field: pe_name_mstr.name
     type: string
     text: Full Name
     facet: false
+  Status:
+    field: pe_name_mstr.pe_id_status
+    type: string
+    text: Status
+    facet: true
   FirstName:
     field: pe_name_mstr.name_first
     type: string
