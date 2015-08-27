@@ -34,13 +34,18 @@ doc:
     type: string
     text: Product Description
     facet: false
+  Inventory:
+    field: pe_prod_mstr.inventory
+    type: float
+    text: Inventory
+    facet: true
   UpdateWhen:
-    field: pe_name_mstr.update_when
+    field: pe_prod_mstr.update_when
     type: date
     text: Update When
     facet: true
   UniqueKey:
-    field: pe_name_mstr.unique_key
+    field: pe_prod_mstr.unique_key
     type: string
     text: Update Key
     facet: false

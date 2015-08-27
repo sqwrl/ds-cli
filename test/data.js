@@ -160,7 +160,8 @@ module.exports.getData = function(
                     'pe_prod_mstr.prod_status':'A',
                     'pe_prod_mstr.prod_title':'Product 1 Title',
                     'pe_prod_mstr.prod_desc':'Produtc 1 Description',
-                    'pe_prod_mstr.update_when':'2012/11/12',
+                    'pe_prod_mstr.inventory': 5,
+                    'pe_prod_mstr.update_when':'2012-11-12',
                     'pe_prod_mstr.unique_id': 1,
                     'pe_prod_mstr.unique_key':'ProdKey1'
                 },
@@ -170,7 +171,8 @@ module.exports.getData = function(
                     'pe_prod_mstr.prod_status':'A',
                     'pe_prod_mstr.prod_title':'Product 2 Title',
                     'pe_prod_mstr.prod_desc':'Producr 2 Description',
-                    'pe_prod_mstr.update_when':'2001/12/11',
+                    'pe_prod_mstr.inventory': 4.25,
+                    'pe_prod_mstr.update_when':'2001-12-11',
                     'pe_prod_mstr.unique_id': 20,
                     'pe_prod_mstr.unique_key':'ProdKey2'
                 },
@@ -180,7 +182,8 @@ module.exports.getData = function(
                     'pe_prod_mstr.prod_status':'I',
                     'pe_prod_mstr.prod_title':'Product 3 Title',
                     'pe_prod_mstr.prod_desc':'Product 3 Description',
-                    'pe_prod_mstr.update_when':'2009/1/14',
+                    'pe_prod_mstr.inventory': 3.33,
+                    'pe_prod_mstr.update_when':'2009-1-14',
                     'pe_prod_mstr.unique_id': 200,
                     'pe_prod_mstr.unique_key':'ProdKey3'
                 },
@@ -190,7 +193,8 @@ module.exports.getData = function(
                     'pe_prod_mstr.prod_status':'A',
                     'pe_prod_mstr.prod_title':'Product 4 Title',
                     'pe_prod_mstr.prod_desc':'Product 4 Description',
-                    'pe_prod_mstr.update_when':'2003/1/12',
+                    'pe_prod_mstr.inventory': 4.44,
+                    'pe_prod_mstr.update_when':'2003-1-12',
                     'pe_prod_mstr.unique_id': 400,
                     'pe_prod_mstr.unique_key':'ProdKey4'
                 },
@@ -200,14 +204,19 @@ module.exports.getData = function(
                     'pe_prod_mstr.prod_status':'I',
                     'pe_prod_mstr.prod_title':'Product 5 Title',
                     'pe_prod_mstr.prod_desc':'Product 5 Description',
-                    'pe_prod_mstr.update_when':'2004/5/11',
+                    'pe_prod_mstr.inventory': 5.55,
+                    'pe_prod_mstr.update_when':'2004-5-11',
                     'pe_prod_mstr.unique_id': 600,
                     'pe_prod_mstr.unique_key':'ProdKey5'
                 }
             ];
 
             // add 250 records for pe_id 2000
+            var dt = new Date(1998,2,14);
             for (var i=0; i<250; i++){
+                var newDt = dt;
+                newDt = newDt.setDate(newDt.getDate() + i);
+                var newDtStr = new Date(Math.floor(newDt)).toISOString().split('T')[0];
                 recs.push(
                     {
                         'pe_prod_mstr.pr_id':(3000 + (i*10)).toString(),
@@ -215,7 +224,8 @@ module.exports.getData = function(
                         'pe_prod_mstr.prod_status': (i % 30 === 0) ? 'I' : 'A',
                         'pe_prod_mstr.prod_title':'Product ' + i + ' Title',
                         'pe_prod_mstr.prod_desc':'Product ' + i + ' Description',
-                        'pe_prod_mstr.update_when':'2004-2-14',
+                        'pe_prod_mstr.inventory': (i + (i/10)),
+                        'pe_prod_mstr.update_when':newDtStr,
                         'pe_prod_mstr.unique_id': 5 * i,
                         'pe_prod_mstr.unique_key':'2000ProdKey' + i
                     }
