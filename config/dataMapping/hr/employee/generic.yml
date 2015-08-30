@@ -18,11 +18,18 @@ doc:
     type: string
     text: HR Status
     facet: true
+    code:
+      key: hrEmployeeStatus
+      where:
+        - Entity
   PYStatus:
     field: hr_empmstr.py_stat
     type: string
     text: PY Status
     facet: true
+    code:
+      key: hrPYStatus
+      where:
   FullName:
     field: hr_empmstr.name
     type: string
@@ -48,21 +55,37 @@ doc:
     type: string
     text: Type
     facet: true
+    code:
+      key: hrEmployeeType
+      where:
+        - Entity
   BargUnit:
     field: hr_empmstr.barg_unit
     type: string
     text: Bargaining Unit
     facet: true
+    code:
+      key: hrBargUnit
+      where:
+        - Entity
   Division:
     field: hr_empmstr.division
     type: string
     text: Division
     facet: true
+    code:
+      key: hrDivision
+      where:
+        - Entity
   Department:
     field: hr_empmstr.dept
     type: string
     text: Department
     facet: true
+    code:
+      key: hrDepartment
+      where:
+        - Entity
   BirthDt:
     field: hr_empmstr.dob
     type: date
@@ -73,6 +96,13 @@ doc:
     type: date
     text: Hire Date
     facet: true
+  Entity:
+    field: hr_empmstr.entity
+    type: string
+    text: Entity
+    facet: true
+    code:
+      key: hrEntity
   UpdateWhen:
     field: hr_empmstr.update_when
     type: date

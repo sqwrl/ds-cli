@@ -19,11 +19,20 @@ doc:
     type: string
     text: PE ID
     facet: true
+  Ledger:
+    field: pe_prod_mstr.gl_lg
+    type: string
+    text: Ledger
+    facet: true
   ProductStatus:
     field: pe_prod_mstr.prod_status
     type: string
     text: Product Status
     facet: true
+    code:
+      key: peProductStatus
+      where:
+        - Ledger
   ProductTitle:
     field: pe_prod_mstr.prod_title
     type: string

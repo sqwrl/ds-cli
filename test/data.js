@@ -157,6 +157,7 @@ module.exports.getData = function(
                 {
                     'pe_prod_mstr.pr_id':'1234',
                     'pe_prod_mstr.pe_id':'1000',
+                    'pe_prod_mstr.gl_lg':'GL',
                     'pe_prod_mstr.prod_status':'A',
                     'pe_prod_mstr.prod_title':'Product 1 Title',
                     'pe_prod_mstr.prod_desc':'Produtc 1 Description',
@@ -168,6 +169,7 @@ module.exports.getData = function(
                 {
                     'pe_prod_mstr.pr_id':'1245',
                     'pe_prod_mstr.pe_id':'1000',
+                    'pe_prod_mstr.gl_lg':'GL',
                     'pe_prod_mstr.prod_status':'A',
                     'pe_prod_mstr.prod_title':'Product 2 Title',
                     'pe_prod_mstr.prod_desc':'Producr 2 Description',
@@ -179,6 +181,7 @@ module.exports.getData = function(
                 {
                     'pe_prod_mstr.pr_id':'1256',
                     'pe_prod_mstr.pe_id':'1000',
+                    'pe_prod_mstr.gl_lg':'GL',
                     'pe_prod_mstr.prod_status':'I',
                     'pe_prod_mstr.prod_title':'Product 3 Title',
                     'pe_prod_mstr.prod_desc':'Product 3 Description',
@@ -190,6 +193,7 @@ module.exports.getData = function(
                 {
                     'pe_prod_mstr.pr_id':'2367',
                     'pe_prod_mstr.pe_id':'1000',
+                    'pe_prod_mstr.gl_lg':'GL',
                     'pe_prod_mstr.prod_status':'A',
                     'pe_prod_mstr.prod_title':'Product 4 Title',
                     'pe_prod_mstr.prod_desc':'Product 4 Description',
@@ -201,6 +205,7 @@ module.exports.getData = function(
                 {
                     'pe_prod_mstr.pr_id':'2378',
                     'pe_prod_mstr.pe_id':'1000',
+                    'pe_prod_mstr.gl_lg':'GL',
                     'pe_prod_mstr.prod_status':'I',
                     'pe_prod_mstr.prod_title':'Product 5 Title',
                     'pe_prod_mstr.prod_desc':'Product 5 Description',
@@ -221,6 +226,7 @@ module.exports.getData = function(
                     {
                         'pe_prod_mstr.pr_id':(3000 + (i*10)).toString(),
                         'pe_prod_mstr.pe_id':'2000',
+                        'pe_prod_mstr.gl_lg':(i % 5 === 0) ? 'SL' : 'GL',
                         'pe_prod_mstr.prod_status': (i % 30 === 0) ? 'I' : 'A',
                         'pe_prod_mstr.prod_title':'Product ' + i + ' Title',
                         'pe_prod_mstr.prod_desc':'Product ' + i + ' Description',
@@ -249,6 +255,7 @@ module.exports.getData = function(
                     'hr_empmstr.dept': 'ADMIN',
                     'hr_empmstr.dob': '1970-10-23',
                     'hr_empmstr.hdt': '2000-01-1',
+                    'hr_empmstr.entity': 'ROOT',
                     'hr_empmstr.update_when': '2003-6-12',
                     'hr_empmstr.unique_key': 'EmpKey1',
                     'hr_empmstr.unique_id': 10,
@@ -268,6 +275,7 @@ module.exports.getData = function(
                     'hr_empmstr.dept': 'ADMIN',
                     'hr_empmstr.dob': '1965-11-2',
                     'hr_empmstr.hdt': '2008-11-11',
+                    'hr_empmstr.entity': 'ROOT',
                     'hr_empmstr.update_when': '2013-6-13',
                     'hr_empmstr.unique_key': 'EmpKey2',
                     'hr_empmstr.unique_id': 200,
@@ -287,6 +295,7 @@ module.exports.getData = function(
                     'hr_empmstr.dept': 'FACT',
                     'hr_empmstr.dob': '1994-4-21',
                     'hr_empmstr.hdt': '2003-2-24',
+                    'hr_empmstr.entity': 'ROOT',
                     'hr_empmstr.update_when': '2013-6-12',
                     'hr_empmstr.unique_key': 'EmpKey3',
                     'hr_empmstr.unique_id': 3000,
@@ -306,6 +315,7 @@ module.exports.getData = function(
                     'hr_empmstr.dept': 'ADMIN',
                     'hr_empmstr.dob': '1963-12-11',
                     'hr_empmstr.hdt': '2002-04-20',
+                    'hr_empmstr.entity': 'ROOT',
                     'hr_empmstr.update_when': '2011-6-15',
                     'hr_empmstr.unique_key': 'EmpKey4',
                     'hr_empmstr.unique_id': 9000,
