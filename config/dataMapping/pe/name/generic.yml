@@ -53,24 +53,19 @@ doc:
     text: Security Code
     facet: true
     code:
-      key: peSecurityCode
+      key: peCommonCodes
       where:
+        - $PEOW
   SelCode1:
     field: pe_name_mstr.pe_sel_cd1
     type: string
     text: Select Code 1
     facet: true
-    code:
-      key: peSelectCode1
-      where:
   SelCode2:
     field: pe_name_mstr.pe_sel_cd2
     type: string
     text: Select Code 2
     facet: true
-    code:
-      key: peSelectCode2
-      where:
   AffCode:
     field: pe_name_mstr.affil_cd
     type: string

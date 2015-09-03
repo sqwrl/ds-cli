@@ -31,8 +31,6 @@ doc:
     facet: true
     code:
       key: peProductStatus
-      where:
-        - Ledger
   ProductTitle:
     field: pe_prod_mstr.prod_title
     type: string

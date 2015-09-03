@@ -22,13 +22,13 @@ module.exports.getData = function(
             recs = [
                 {
                     'pe_name_mstr.pe_id': '1000',
-                    'pe_name_mstr.pe_id_status': 'A',
+                    'pe_name_mstr.pe_id_status': 'AC',
                     'pe_name_mstr.name': 'LAST1 FIRST1, MIDDLE1',
                     'pe_name_mstr.name_first': 'First1',
                     'pe_name_mstr.name_middle': 'Middle1',
                     'pe_name_mstr.name_last': 'Last1',
                     'pe_name_mstr.pe_url': '',
-                    'pe_name_mstr.security_cd': 'SEC',
+                    'pe_name_mstr.security_cd': 'SEC2',
                     'pe_name_mstr.pe_sel_cd1': 'SC1',
                     'pe_name_mstr.pe_sel_cd2': '',
                     'pe_name_mstr.affil_cd': 'AF1',
@@ -40,13 +40,13 @@ module.exports.getData = function(
                 },
                 {
                     'pe_name_mstr.pe_id': '2000',
-                    'pe_name_mstr.pe_id_status': 'A',
+                    'pe_name_mstr.pe_id_status': 'AC',
                     'pe_name_mstr.name': 'LAST2 FIRST2',
                     'pe_name_mstr.name_first': 'First2',
                     'pe_name_mstr.name_middle': '',
                     'pe_name_mstr.name_last': 'Last2',
                     'pe_name_mstr.pe_url': 'www.someurl.com',
-                    'pe_name_mstr.security_cd': 'SEC',
+                    'pe_name_mstr.security_cd': 'SEC1',
                     'pe_name_mstr.pe_sel_cd1': 'SC2',
                     'pe_name_mstr.pe_sel_cd2': 'ABC',
                     'pe_name_mstr.affil_cd': '',
@@ -158,7 +158,7 @@ module.exports.getData = function(
                     'pe_prod_mstr.pr_id':'1234',
                     'pe_prod_mstr.pe_id':'1000',
                     'pe_prod_mstr.gl_lg':'GL',
-                    'pe_prod_mstr.prod_status':'A',
+                    'pe_prod_mstr.prod_status':'AC',
                     'pe_prod_mstr.prod_title':'Product 1 Title',
                     'pe_prod_mstr.prod_desc':'Produtc 1 Description',
                     'pe_prod_mstr.inventory': 5,
@@ -170,7 +170,7 @@ module.exports.getData = function(
                     'pe_prod_mstr.pr_id':'1245',
                     'pe_prod_mstr.pe_id':'1000',
                     'pe_prod_mstr.gl_lg':'GL',
-                    'pe_prod_mstr.prod_status':'A',
+                    'pe_prod_mstr.prod_status':'AC',
                     'pe_prod_mstr.prod_title':'Product 2 Title',
                     'pe_prod_mstr.prod_desc':'Producr 2 Description',
                     'pe_prod_mstr.inventory': 4.25,
@@ -182,7 +182,7 @@ module.exports.getData = function(
                     'pe_prod_mstr.pr_id':'1256',
                     'pe_prod_mstr.pe_id':'1000',
                     'pe_prod_mstr.gl_lg':'GL',
-                    'pe_prod_mstr.prod_status':'I',
+                    'pe_prod_mstr.prod_status':'IN',
                     'pe_prod_mstr.prod_title':'Product 3 Title',
                     'pe_prod_mstr.prod_desc':'Product 3 Description',
                     'pe_prod_mstr.inventory': 3.33,
@@ -194,7 +194,7 @@ module.exports.getData = function(
                     'pe_prod_mstr.pr_id':'2367',
                     'pe_prod_mstr.pe_id':'1000',
                     'pe_prod_mstr.gl_lg':'GL',
-                    'pe_prod_mstr.prod_status':'A',
+                    'pe_prod_mstr.prod_status':'AC',
                     'pe_prod_mstr.prod_title':'Product 4 Title',
                     'pe_prod_mstr.prod_desc':'Product 4 Description',
                     'pe_prod_mstr.inventory': 4.44,
@@ -206,7 +206,7 @@ module.exports.getData = function(
                     'pe_prod_mstr.pr_id':'2378',
                     'pe_prod_mstr.pe_id':'1000',
                     'pe_prod_mstr.gl_lg':'GL',
-                    'pe_prod_mstr.prod_status':'I',
+                    'pe_prod_mstr.prod_status':'OB',
                     'pe_prod_mstr.prod_title':'Product 5 Title',
                     'pe_prod_mstr.prod_desc':'Product 5 Description',
                     'pe_prod_mstr.inventory': 5.55,
@@ -227,7 +227,7 @@ module.exports.getData = function(
                         'pe_prod_mstr.pr_id':(3000 + (i*10)).toString(),
                         'pe_prod_mstr.pe_id':'2000',
                         'pe_prod_mstr.gl_lg':(i % 5 === 0) ? 'SL' : 'GL',
-                        'pe_prod_mstr.prod_status': (i % 30 === 0) ? 'I' : 'A',
+                        'pe_prod_mstr.prod_status': (i % 30 === 0) ? 'IN' : 'AC',
                         'pe_prod_mstr.prod_title':'Product ' + i + ' Title',
                         'pe_prod_mstr.prod_desc':'Product ' + i + ' Description',
                         'pe_prod_mstr.inventory': (i + (i/10)),
@@ -323,6 +323,165 @@ module.exports.getData = function(
                 }
             ];
             break;
+        case 'SELECT gl_gr, glg_desc FROM glg_gen_mstr':
+        case 'SELECT gl_gr, glg_desc FROM glg_gen_mstr ORDER BY ':
+            recs = [
+                {
+                    'gl_gr':'GL',
+                    'glg_desc':'General Ledger'
+                },
+                {
+                    'gl_gr':'SL',
+                    'glg_desc':'Subsidiary Ledger'
+                }
+            ];
+            break;
+        case 'SELECT cd_gr, cd_category, cd_code, cd_descs, cd_d':
+            recs = [
+                {
+                    'cd_gr':'@@',
+                    'cd_category':'PEOW',
+                    'cd_code': 'SEC1',
+                    'cd_descs': '',
+                    'cd_descm': 'Security Code 1',
+                    'cd_descl': ''
+                },
+                {
+                    'cd_gr':'@@',
+                    'cd_category':'PEOW',
+                    'cd_code': 'SEC2',
+                    'cd_descs': '',
+                    'cd_descm': 'Security Code 2',
+                    'cd_descl': ''
+                }
+            ];
+            break;
+        case 'SELECT entity_cd, short_desc, long_desc FROM hr_en':
+            recs = [
+                {
+                    'entity_cd':'ROOT',
+                    'short_desc':'ROOT',
+                    'long_desc':'ROOT Entity'
+                }
+            ];
+            break;
+        case 'SELECT codeid, codeval, short_desc, long_desc FROM':
+            recs = [
+                {
+                    'codeid':'GENDER_CODE',
+                    'codeval': 'F',
+                    'short_desc':'Female',
+                    'long_desc':'Female'
+                },
+                {
+                    'codeid':'GENDER_CODE',
+                    'codeval': 'M',
+                    'short_desc':'Male',
+                    'long_desc':'Male'
+                },
+                {
+                    'codeid':'HR_EMPLOYEE_STAT',
+                    'codeval': 'A',
+                    'short_desc':'Active',
+                    'long_desc':'Active'
+                },
+                {
+                    'codeid':'HR_EMPLOYEE_STAT',
+                    'codeval': 'I',
+                    'short_desc':'Inactive',
+                    'long_desc':'Inactive'
+                },
+                {
+                    'codeid':'HR_EMPLOYEE_STAT',
+                    'codeval': 'L',
+                    'short_desc':'Leave',
+                    'long_desc':'Leave'
+                },
+                {
+                    'codeid':'PY_EMPLOYEE_STAT',
+                    'codeval': 'A',
+                    'short_desc':'Active',
+                    'long_desc':'Active'
+                },
+                {
+                    'codeid':'PY_EMPLOYEE_STAT',
+                    'codeval': 'I',
+                    'short_desc':'Inactive',
+                    'long_desc':'Inactive'
+                }
+            ];
+            break;
+        case 'SELECT entity_id, codeid, codeval, short_desc, lon':
+            recs = [
+                {
+                    'entity_id':'ROOT',
+                    'codeid': 'DEPARTMENT_CODE',
+                    'codeval': 'ADMIN',
+                    'short_desc':'Admin',
+                    'long_desc':'Admin Department'
+                },
+                {
+                    'entity_id':'ROOT',
+                    'codeid': 'DEPARTMENT_CODE',
+                    'codeval': 'FACT',
+                    'short_desc':'Faculty',
+                    'long_desc':'Faculty'
+                },
+                {
+                    'entity_id':'ROOT',
+                    'codeid': 'DIVISION_CODE',
+                    'codeval': 'FIN',
+                    'short_desc':'Finance',
+                    'long_desc':'Finance Division'
+                },
+                {
+                    'entity_id':'ROOT',
+                    'codeid': 'EMPLOYEE_TYPE',
+                    'codeval': 'ABC',
+                    'short_desc':'Abc',
+                    'long_desc':'Abc Type'
+                },
+                {
+                    'entity_id':'ROOT',
+                    'codeid': 'EMPLOYEE_TYPE',
+                    'codeval': 'CERT',
+                    'short_desc':'Certificated',
+                    'long_desc':'Certified Staff'
+                },
+                {
+                    'entity_id':'ROOT',
+                    'codeid': 'EMPLOYEE_TYPE',
+                    'codeval': 'QWE',
+                    'short_desc':'QWE Status',
+                    'long_desc':'Q.W.E. Status'
+                }
+            ];
+            break;
+        case 'SELECT entity_id, location, short_desc, long_desc ':
+            recs = [];
+            break;
+        case 'SELECT entity_id, bargunit, short_desc, long_desc ':
+            recs = [
+                {
+                    'entity_id':'ROOT',
+                    'bargunit': 'DEF',
+                    'short_desc':'Definitive Unit',
+                    'long_desc':'Definitive Unit'
+                },
+                {
+                    'entity_id':'ROOT',
+                    'bargunit': 'NONE',
+                    'short_desc':'No Unit',
+                    'long_desc':'No Unit'
+                },
+                {
+                    'entity_id':'ROOT',
+                    'bargunit': 'GRA',
+                    'short_desc':'Graphics',
+                    'long_desc':'Graphics Unit'
+                }
+            ];
+            break;
         default:
             recs = [];
     }
@@ -344,13 +503,15 @@ module.exports.getData = function(
         return recs.length;
     } else {
         // return the appropriate portion of the array
-        switch (offSet) {
-            case 0:
-                recs = _.take(recs, next);
-                break;
-            default:
-                recs = _.drop(recs, offSet * next);
-                recs = _.dropRight(recs, recs.length - next);
+        if (offSet >= 0 && next !== null) {
+            switch (offSet) {
+                case 0:
+                    recs = _.take(recs, next);
+                    break;
+                default:
+                    recs = _.drop(recs, offSet * next);
+                    recs = _.dropRight(recs, recs.length - next);
+            }
         }
 
         return recs;

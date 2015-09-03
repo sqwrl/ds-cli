@@ -19,9 +19,8 @@ doc:
     text: HR Status
     facet: true
     code:
-      key: hrEmployeeStatus
+      key: hrHRStatus
       where:
-        - Entity
   PYStatus:
     field: hr_empmstr.py_stat
     type: string
