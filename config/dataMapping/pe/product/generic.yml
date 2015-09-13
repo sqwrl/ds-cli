@@ -3,12 +3,12 @@ indexTest: Person Entity
 type: product
 typeText: Product
 fixedColumns: 2
+params:
+  query: SELECT * FROM pe_prod_mstr
+  id: pe_prod_mstr.pr_id
+  chunkSize: 100
+  orderBy: pe_prod_mstr.unique_id
 doc:
-  params:
-    query: SELECT * FROM pe_prod_mstr
-    id: pe_prod_mstr.pr_id
-    chunkSize: 100
-    orderBy: pe_prod_mstr.unique_id
   ProductID:
     field: pe_prod_mstr.pr_id
     type: string

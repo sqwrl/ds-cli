@@ -10,7 +10,3 @@ doc:
     type: float
     text: Extra Minor 3
     facet: true
-#subDocs:
-#  - SKIP
-#  - params:
-#      url: pe_email_dtl.url

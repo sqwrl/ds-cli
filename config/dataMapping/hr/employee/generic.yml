@@ -3,11 +3,11 @@ indexText: Human Resources
 type: employee
 typeText: Employee
 fixedColumns: 1
+params:
+  query: SELECT * FROM hr_empmstr
+  id: hr_empmstr.id
+  orderBy: hr_empmstr.unique_id
 doc:
-  params:
-    query: SELECT * FROM hr_empmstr
-    id: hr_empmstr.id
-    orderBy: hr_empmstr.unique_id
   EmpID:
     field: hr_empmstr.id
     type: string

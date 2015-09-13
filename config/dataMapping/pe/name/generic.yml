@@ -3,12 +3,12 @@ indexText: Person Entity
 type: name
 typeText: Vendor
 fixedColumns: 2
+params:
+  query: SELECT * FROM pe_name_mstr
+  id: pe_name_mstr.pe_id
+  orderBy: pe_name_mstr.unique_id
+  chunkSize: 100
 doc:
-  params:
-    query: SELECT * FROM pe_name_mstr
-    id: pe_name_mstr.pe_id
-    orderBy: pe_name_mstr.unique_id
-    chunkSize: 100
   PeId:
     field: pe_name_mstr.pe_id
     type: string
@@ -74,6 +74,110 @@ doc:
     code:
       key: peAffiliateCode
       where:
+  Address:
+    type: nested
+    text: Adresses
+    params:
+      query: SELECT * FROM pe_address_dtl INNER JOIN pe_name_mstr ON pe_address_dtl.pe_id = pe_name_mstr.pe_id
+      id: pe_address_dtl.pe_id
+      orderBy: pe_address_dtl.unique_id
+      chunkSize: 100
+    doc:
+      PeId:
+        field: pe_address_dtl.pe_id
+        type: string
+        text: PE ID
+        facet: false
+      AdressCode:
+        field: pe_address_dtl.pe_addr_cd
+        type: string
+        text: Code
+        facet: true
+        code:
+          key: peCommonCodes
+          where:
+            - $PEAC
+      Street:
+        field: pe_address_dtl.st1
+        type: string
+        text: Address
+        facet: false
+      City:
+        field: pe_address_dtl.city
+        type: string
+        text: City
+        facet: true
+      State:
+        field: pe_address_dtl.state
+        type: string
+        text: State
+        facet: true
+        code:
+          key: peCommonCodes
+          where:
+            - $PEST
+      Zip:
+        field: pe_address_dtl.zip
+        type: integer
+        text: Zip
+        facet: false
+      UpdateWhen:
+        field: pe_address_dtl.update_when
+        type: date
+        text: Update When
+        facet: false
+      UniqueKey:
+        field: pe_address_dtl.unique_key
+        type: string
+        text: Unique Key
+        facet: false
+  Email:
+    type: nested
+    text: Email
+    params:
+      query: SELECT * FROM pe_email_dtl INNER JOIN pe_name_mstr ON pe_email_dtl.pe_id = pe_name_mstr.pe_id
+      id: pe_email_dtl.pe_id
+      orderBy: pe_email_dtl.unique_id
+      chunkSize: 100
+    doc:
+      PeId:
+        field: pe_email_dtl.pe_id
+        type: string
+        text: PE ID
+        facet: false
+      EmailType:
+        field: pe_email_dtl.email_type_cd
+        type: string
+        text: Type
+        facet: true
+        code:
+          key: peCommonCodes
+          where:
+            - $PEET
+      EmailAddressCode:
+        field: pe_email_dtl.pe_addr_cd
+        type: string
+        text: Address Code
+        facet: true
+        code:
+          key: peCommonCodes
+          where:
+            - $PEAC
+      Email:
+        field: pe_email_dtl.email_addr
+        type: string
+        text: Email Address
+        facet: false
+      UpdateWhen:
+        field: pe_email_dtl.update_when
+        type: date
+        text: Update When
+        facet: false
+      UniqueKey:
+        field: pe_email_dtl.unique_key
+        type: string
+        text: Update When
+        facet: false
   UpdateWhen:
     field: pe_name_mstr.update_when
     type: date
@@ -84,28 +188,3 @@ doc:
     type: string
     text: Unique Key
     facet: false
-#subDocs:
-#  - params:
-#      query: SELECT * FROM pe_email_dtl INNER JOIN pe_name_mstr ON pe_email_dtl.pe_id = pe_name_mstr.pe_id
-#      PE ID: pe_email_dtl.pe_id
-#      nodeName: Email
-#      orderBy: pe_email_dtl.unique_id
-#      chunkSize: 100
-#    Email Type: pe_email_dtl.email_type_cd
-#    Email Address Code: pe_email_dtl.pe_addr_cd
-#    Email: pe_email_dtl.email_addr
-#    updateWhen: pe_email_dtl.update_when
-#    uniqueKey: pe_email_dtl.unique_key
-#  - params:
-#      query: SELECT * FROM pe_address_dtl INNER JOIN pe_name_mstr ON pe_address_dtl.pe_id = pe_name_mstr.pe_id
-#      PE ID: pe_address_dtl.pe_id
-#      nodeName: Address
-#      orderBy: pe_address_dtl.unique_id
-#      chunkSize: 100
-#    Address Code: pe_address_dtl.pe_addr_cd
-#    Street: pe_address_dtl.st1
-#    City: pe_address_dtl.city
-#    State: pe_address_dtl.state
-#    Zip: pe_address_dtl.zip
-#    updateWhen: pe_address_dtl.update_when
-#    uniqueKey: pe_address_dtl.unique_key

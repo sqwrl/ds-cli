@@ -67,7 +67,7 @@ module.exports.getData = function(
                     'pe_email_dtl.pe_addr_cd': 'PM',
                     'pe_email_dtl.email_addr': 'email@1000.1',
                     'pe_email_dtl.url': 'www.emailkey1.com',
-                    'pe_email_dtl.update_when': '2010/10/10',
+                    'pe_email_dtl.update_when': '2010-10-10',
                     'pe_email_dtl.unique_id': 2,
                     'pe_email_dtl.unique_key': 'EmailKey1'
                 },
@@ -77,7 +77,7 @@ module.exports.getData = function(
                     'pe_email_dtl.pe_addr_cd': 'PM',
                     'pe_email_dtl.email_addr': 'emailoffice@1000.1',
                     'pe_email_dtl.url': 'www.emailkey2.com',
-                    'pe_email_dtl.update_when': '2009/10/03',
+                    'pe_email_dtl.update_when': '2009-10-03',
                     'pe_email_dtl.unique_id': 1,
                     'pe_email_dtl.unique_key': 'EmailKey2'
                 },
@@ -87,7 +87,7 @@ module.exports.getData = function(
                     'pe_email_dtl.pe_addr_cd': 'OF',
                     'pe_email_dtl.email_addr': 'email@2000.1',
                     'pe_email_dtl.url': 'www.emailkey3.com',
-                    'pe_email_dtl.update_when': '2008/8/8',
+                    'pe_email_dtl.update_when': '2008-8-8',
                     'pe_email_dtl.unique_id': 3,
                     'pe_email_dtl.unique_key': 'EmailKey3'
                 },
@@ -97,7 +97,7 @@ module.exports.getData = function(
                     'pe_email_dtl.pe_addr_cd': 'OF',
                     'pe_email_dtl.email_addr': 'emailelse@2000.1',
                     'pe_email_dtl.url': 'www.emailkey4.com',
-                    'pe_email_dtl.update_when': '2007/7/10',
+                    'pe_email_dtl.update_when': '2007-7-10',
                     'pe_email_dtl.unique_id': 4,
                     'pe_email_dtl.unique_key': 'EmailKey14'
                 },
@@ -106,7 +106,7 @@ module.exports.getData = function(
                     'pe_email_dtl.email_type_cd': '',
                     'pe_email_dtl.pe_addr_cd': '',
                     'pe_email_dtl.email_addr': 'emailagain@2000.com',
-                    'pe_email_dtl.update_when': '2010/10/12',
+                    'pe_email_dtl.update_when': '2010-10-12',
                     'pe_email_dtl.url': 'www.emailkey5.com',
                     'pe_email_dtl.unique_id': 5,
                     'pe_email_dtl.unique_key': 'EmailKey5'
@@ -123,7 +123,7 @@ module.exports.getData = function(
                     'pe_address_dtl.city': 'Chico',
                     'pe_address_dtl.state': 'CA',
                     'pe_address_dtl.zip': '95928',
-                    'pe_address_dtl.update_when': '2010/10/4',
+                    'pe_address_dtl.update_when': '2010-10-4',
                     'pe_address_dtl.unique_id': 1,
                     'pe_address_dtl.unique_key': 'AddressKey1'
                 },
@@ -134,7 +134,7 @@ module.exports.getData = function(
                     'pe_address_dtl.city': 'Chico',
                     'pe_address_dtl.state': 'CA',
                     'pe_address_dtl.zip': '95922',
-                    'pe_address_dtl.update_when': '2006/10/5',
+                    'pe_address_dtl.update_when': '2006-10-5',
                     'pe_address_dtl.unique_id': 10,
                     'pe_address_dtl.unique_key': 'AddressKey2'
                 },
@@ -145,7 +145,7 @@ module.exports.getData = function(
                     'pe_address_dtl.city': 'Chico',
                     'pe_address_dtl.state': 'CA',
                     'pe_address_dtl.zip': '95933',
-                    'pe_address_dtl.update_when': '2010/10/10',
+                    'pe_address_dtl.update_when': '2010-10-10',
                     'pe_address_dtl.unique_id': 100,
                     'pe_address_dtl.unique_key': 'AddressKey3'
                 }
@@ -352,6 +352,63 @@ module.exports.getData = function(
                     'cd_code': 'SEC2',
                     'cd_descs': '',
                     'cd_descm': 'Security Code 2',
+                    'cd_descl': ''
+                },
+                {
+                    'cd_gr':'@@',
+                    'cd_category':'PEST',
+                    'cd_code': 'CA',
+                    'cd_descs': '',
+                    'cd_descm': 'California',
+                    'cd_descl': ''
+                }
+                ,
+                {
+                    'cd_gr':'@@',
+                    'cd_category':'PEST',
+                    'cd_code': 'FL',
+                    'cd_descs': '',
+                    'cd_descm': 'Florida',
+                    'cd_descl': ''
+                },
+                {
+                    'cd_gr':'@@',
+                    'cd_category':'PEAC',
+                    'cd_code': 'HO',
+                    'cd_descs': '',
+                    'cd_descm': 'Home',
+                    'cd_descl': ''
+                },
+                {
+                    'cd_gr':'@@',
+                    'cd_category':'PEAC',
+                    'cd_code': 'OF',
+                    'cd_descs': '',
+                    'cd_descm': 'Office',
+                    'cd_descl': ''
+                },
+                {
+                    'cd_gr':'@@',
+                    'cd_category':'PEAC',
+                    'cd_code': 'PM',
+                    'cd_descs': '',
+                    'cd_descm': 'Primary',
+                    'cd_descl': ''
+                },
+                {
+                    'cd_gr':'@@',
+                    'cd_category':'PEET',
+                    'cd_code': 'HO',
+                    'cd_descs': '',
+                    'cd_descm': 'Home',
+                    'cd_descl': ''
+                },
+                {
+                    'cd_gr':'@@',
+                    'cd_category':'PEET',
+                    'cd_code': 'OF',
+                    'cd_descs': '',
+                    'cd_descm': 'Office',
                     'cd_descl': ''
                 }
             ];
