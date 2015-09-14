@@ -139,6 +139,7 @@ doc:
             - '|1000'
             - '|/'
             - '|2'
+            - '#Math.round(value)'
       UpdateWhen:
         field: pe_address_dtl.update_when
         type: date
