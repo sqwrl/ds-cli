@@ -102,6 +102,12 @@ doc:
         type: string
         text: Address
         facet: false
+        function:
+          type: concatStrings
+          fields:
+            - pe_address_dtl.st1
+            - '|, '
+            - pe_address_dtl.st2
       City:
         field: pe_address_dtl.city
         type: string
@@ -121,6 +127,18 @@ doc:
         type: integer
         text: Zip
         facet: false
+      ZipCalculated:
+        field: pe_address_dtl.zip
+        type: integer
+        text: Zip Calc
+        facet: false
+        function:
+          type: equation
+          fields:
+            - pe_address_dtl.zip
+            - '|1000'
+            - '|/'
+            - '|2'
       UpdateWhen:
         field: pe_address_dtl.update_when
         type: date
