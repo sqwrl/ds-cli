@@ -31,6 +31,11 @@ doc:
     facet: true
     code:
       key: peProductStatus
+  ProducType:
+    field: pe_prod_mstr.prod_type
+    type: string
+    text: Type
+    facet: true
   ProductTitle:
     field: pe_prod_mstr.prod_title
     type: string

@@ -162,6 +162,7 @@ module.exports.getData = function(
                     'pe_prod_mstr.pe_id':'1000',
                     'pe_prod_mstr.gl_lg':'GL',
                     'pe_prod_mstr.prod_status':'AC',
+                    'pe_prod_mstr.prod_type':'A1',
                     'pe_prod_mstr.prod_title':'Product 1 Title',
                     'pe_prod_mstr.prod_desc':'Produtc 1 Description',
                     'pe_prod_mstr.inventory': 5,
@@ -174,6 +175,7 @@ module.exports.getData = function(
                     'pe_prod_mstr.pe_id':'1000',
                     'pe_prod_mstr.gl_lg':'GL',
                     'pe_prod_mstr.prod_status':'AC',
+                    'pe_prod_mstr.prod_type':'B2',
                     'pe_prod_mstr.prod_title':'Product 2 Title',
                     'pe_prod_mstr.prod_desc':'Producr 2 Description',
                     'pe_prod_mstr.inventory': 4.25,
@@ -186,6 +188,7 @@ module.exports.getData = function(
                     'pe_prod_mstr.pe_id':'1000',
                     'pe_prod_mstr.gl_lg':'GL',
                     'pe_prod_mstr.prod_status':'IN',
+                    'pe_prod_mstr.prod_type':'C3',
                     'pe_prod_mstr.prod_title':'Product 3 Title',
                     'pe_prod_mstr.prod_desc':'Product 3 Description',
                     'pe_prod_mstr.inventory': 3.33,
@@ -198,6 +201,7 @@ module.exports.getData = function(
                     'pe_prod_mstr.pe_id':'1000',
                     'pe_prod_mstr.gl_lg':'GL',
                     'pe_prod_mstr.prod_status':'AC',
+                    'pe_prod_mstr.prod_type':'D4',
                     'pe_prod_mstr.prod_title':'Product 4 Title',
                     'pe_prod_mstr.prod_desc':'Product 4 Description',
                     'pe_prod_mstr.inventory': 4.44,
@@ -210,6 +214,7 @@ module.exports.getData = function(
                     'pe_prod_mstr.pe_id':'1000',
                     'pe_prod_mstr.gl_lg':'GL',
                     'pe_prod_mstr.prod_status':'OB',
+                    'pe_prod_mstr.prod_type':'E5',
                     'pe_prod_mstr.prod_title':'Product 5 Title',
                     'pe_prod_mstr.prod_desc':'Product 5 Description',
                     'pe_prod_mstr.inventory': 5.55,
@@ -225,12 +230,14 @@ module.exports.getData = function(
                 var newDt = dt;
                 newDt = newDt.setDate(newDt.getDate() + i);
                 var newDtStr = new Date(Math.floor(newDt)).toISOString().split('T')[0];
+                var peid = Math.floor(Math.random() * 10) + 2001;
                 recs.push(
                     {
                         'pe_prod_mstr.pr_id':(3000 + (i*10)).toString(),
-                        'pe_prod_mstr.pe_id':'2000',
+                        'pe_prod_mstr.pe_id':peid,
                         'pe_prod_mstr.gl_lg':(i % 5 === 0) ? 'SL' : 'GL',
                         'pe_prod_mstr.prod_status': (i % 30 === 0) ? 'IN' : 'AC',
+                        'pe_prod_mstr.prod_type':(i % 30 === 0) ? 'A' + i : 'B' + i,
                         'pe_prod_mstr.prod_title':'Product ' + i + ' Title',
                         'pe_prod_mstr.prod_desc':'Product ' + i + ' Description',
                         'pe_prod_mstr.inventory': (i + (i/10)),
